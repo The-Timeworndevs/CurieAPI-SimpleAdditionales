@@ -1,60 +1,55 @@
 package net.timeworndevs.quantumadds.render;
 
+import net.fabricmc.fabric.api.client.rendering.v1.ArmorRenderer;
 import net.minecraft.client.model.*;
+import net.minecraft.client.render.OverlayTexture;
+import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.item.ItemRenderer;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.Identifier;
+import net.timeworndevs.quantumadds.QuantumClient;
+import net.timeworndevs.quantumadds.compat.FiguraCompat;
+import net.timeworndevs.quantumadds.item.Armors.ArmorTestItems;
+import net.timeworndevs.quantumadds.item.HazmatSuitItem;
+
+import java.util.List;
 
 
-public class HazmatSuitModel {
-    public final ModelPart head;
-    public final ModelPart body;
-    public final ModelPart right_arm;
-    public final ModelPart left_arm;
-    public final ModelPart right_leg;
-    public final ModelPart left_leg;
+public class ArmorTestRenderer {
 
-    public HazmatSuitModel(ModelPart root) {
-        this.head = root.getChild("head");
-        this.body = root.getChild("body");
-        this.right_arm = root.getChild("right_arm");
-        this.left_arm = root.getChild("left_arm");
-        this.right_leg = root.getChild("right_leg");
-        this.left_leg = root.getChild("left_leg");
+    public static final List<Item> HAZMAT_SUIT =
+            List.of(
+                    ArmorTestItems.HAZMAT_HELMET,
+                    ArmorTestItems.HAZMAT_CHESTPLATE,
+                    ArmorTestItems.HAZMAT_LEGGINGS,
+                    ArmorTestItems.HAZMAT_BOOTS
+            );
+
+    static void renderPart(MatrixStack matrices, VertexConsumerProvider vertexConsumers, int light, ItemStack stack, Model model, Identifier texture) {
+        VertexConsumer vertexConsumer = ItemRenderer.getArmorGlintConsumer(vertexConsumers, RenderLayer.getEntityTranslucent(texture), false, stack.hasGlint());
+        model.render(matrices, vertexConsumer, light, OverlayTexture.DEFAULT_UV, 1, 1, 1, 1);
     }
-    public static ModelData getModelData() {
-        ModelData modelData = new ModelData();
-        ModelPartData modelPartData = modelData.getRoot();
-        modelPartData.addChild("hat", ModelPartBuilder.create(), ModelTransform.NONE);
-        ModelPartData Helmet = modelPartData.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -8.0F, -4.0F, 8.0F, 8.0F, 8.0F, new Dilation(0.15F))
-                .uv(44, 60).cuboid(-1.5F, -3.2F, -6.0F, 3.0F, 4.0F, 4.0F, new Dilation(0.0F))
-                .uv(0, 16).cuboid(1.5F, -2.7F, -5.0F, 2.0F, 3.0F, 2.0F, new Dilation(0.0F))
-                .uv(0, 0).cuboid(-3.5F, -2.7F, -5.0F, 2.0F, 3.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-        ModelPartData mask_left_r1 = Helmet.addChild("mask_left_r1", ModelPartBuilder.create().uv(24, 4).cuboid(-1.0389F, -0.5231F, -1.1452F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F))
-                .uv(16, 66).cuboid(-1.5389F, -1.0231F, -2.7452F, 3.0F, 3.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(3.0F, -1.2F, -5.0F, 0.3439F, -0.5537F, -0.0916F));
+    public static void register() {
+        ArmorRenderer renderer = (matrices, vertexConsumers, stack, entity, slot, light, contextModel) -> {
 
-        ModelPartData mask_right_r1 = Helmet.addChild("mask_right_r1", ModelPartBuilder.create().uv(24, 0).cuboid(-0.9611F, -0.5231F, -1.1452F, 2.0F, 2.0F, 2.0F, new Dilation(0.0F))
-                .uv(58, 65).cuboid(-1.4611F, -1.0231F, -2.7452F, 3.0F, 3.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-3.0F, -1.2F, -5.0F, 0.3439F, 0.5537F, 0.0916F));
+            HazmatSuitItem armor = (HazmatSuitItem) stack.getItem();
+            var model = armor.getArmorModel();
+            var texture = armor.getArmorTexture(stack, slot);
+            boolean shouldRender = !QuantumClient.isFiguraLoaded || FiguraCompat.renderArmorPart((PlayerEntity) entity, slot);
 
-        ModelPartData body = modelPartData.addChild("body", ModelPartBuilder.create().uv(28, 28).cuboid(-4.0F, -12.0F, -2.0F, 8.0F, 12.0F, 4.0F, new Dilation(0.25F))
-                .uv(32, 16).cuboid(-1.5F, -10.0F, 2.2F, 3.0F, 9.0F, 3.0F, new Dilation(0.0F))
-                .uv(0, 5).cuboid(-1.0F, -11.0F, 2.7F, 2.0F, 1.0F, 2.0F, new Dilation(0.0F))
-                .uv(0, 64).cuboid(-2.0F, -5.0F, 1.7F, 4.0F, 1.0F, 4.0F, new Dilation(0.0F))
-                .uv(58, 60).cuboid(-2.0F, -9.0F, 1.7F, 4.0F, 1.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 12.0F, 0.0F));
-
-        ModelPartData LeftLeg = modelPartData.addChild("left_leg", ModelPartBuilder.create().uv(36, 44).cuboid(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.1F))
-                .uv(28, 60).cuboid(-2.0F, 7.0F, -2.0F, 4.0F, 2.0F, 4.0F, new Dilation(0.2F)), ModelTransform.pivot(2.0F, 12.0F, 0.0F));
-
-        ModelPartData RightLeg = modelPartData.addChild("right_leg", ModelPartBuilder.create().uv(20, 44).cuboid(-2.0F, 0.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.1F))
-                .uv(60, 22).cuboid(-2.0F, 7.0F, -2.0F, 4.0F, 2.0F, 4.0F, new Dilation(0.2F)), ModelTransform.pivot(-2.0F, 12.0F, 0.0F));
-
-        ModelPartData right_arm = modelPartData.addChild("right_arm", ModelPartBuilder.create().uv(44, 12).cuboid(-2.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.1F))
-                .uv(12, 60).cuboid(-2.0F, 6.0F, -2.0F, 4.0F, 2.0F, 4.0F, new Dilation(0.2F)), ModelTransform.pivot(-6.0F, 2.0F, 0.0F));
-
-        ModelPartData left_arm = modelPartData.addChild("left_arm", ModelPartBuilder.create().uv(32, 0).cuboid(-2.0F, -2.0F, -2.0F, 4.0F, 12.0F, 4.0F, new Dilation(0.1F))
-                .uv(60, 16).cuboid(-2.0F, 6.0F, -2.0F, 4.0F, 2.0F, 4.0F, new Dilation(0.2F)), ModelTransform.pivot(6.0F, 2.0F, 0.0F));
-        return modelData;
+            if (shouldRender) {
+                contextModel.copyBipedStateTo(model);
+                renderPart(matrices, vertexConsumers, light, stack, model, texture);
+            }
+        };
+        ArmorRenderer.register(renderer, HAZMAT_SUIT.toArray(new Item[0]));
     }
 }
+
 
