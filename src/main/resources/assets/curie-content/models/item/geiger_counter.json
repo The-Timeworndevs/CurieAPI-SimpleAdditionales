@@ -1,0 +1,63 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"parent": "minecraft:builtin/entity",
+	"texture_size": [32, 32],
+	"textures": {
+		"4": "block/geiger_counter"
+	},
+	"elements": [
+		{
+			"from": [-6, 0, -1],
+			"to": [6, 8, 1],
+			"rotation": {"angle": 0, "axis": "y", "origin": [0, 2, 0]},
+			"faces": {
+				"north": {"uv": [1, 1, 7, 5], "texture": "#4"},
+				"east": {"uv": [0, 1, 1, 5], "texture": "#4"},
+				"south": {"uv": [8, 1, 14, 5], "texture": "#4"},
+				"west": {"uv": [7, 1, 8, 5], "texture": "#4"},
+				"up": {"uv": [7, 1, 1, 0], "texture": "#4"},
+				"down": {"uv": [13, 0, 7, 1], "texture": "#4"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [-180, 0, -180],
+			"translation": [-4.25, 4.25, -2.25],
+			"scale": [0.55, 0.55, 0.55]
+		},
+		"thirdperson_lefthand": {
+			"translation": [-1.25, 7.25, 0]
+		},
+		"firstperson_righthand": {
+			"rotation": [-180, 14.25, 0],
+			"translation": [8.38, 2.2, -14.12],
+			"scale": [0.68, 0.68, 0.68]
+		},
+		"firstperson_lefthand": {
+			"rotation": [-16, 0, 0],
+			"translation": [-1.25, 7.75, 0]
+		},
+		"ground": {
+			"translation": [0, 5.5, 0]
+		},
+		"gui": {
+			"rotation": [30, -135, 0],
+			"translation": [-7, 0, 0],
+			"scale": [0.625, 0.625, 0.625]
+		},
+		"fixed": {
+			"rotation": [0, -180, 0],
+			"translation": [0, 4.75, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "group",
+			"origin": [-8, 0, -8],
+			"color": 0,
+			"children": [0]
+		}
+	]
+}

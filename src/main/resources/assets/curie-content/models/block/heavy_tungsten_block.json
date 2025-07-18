@@ -1,0 +1,7 @@
+{
+	"credit": "Made without Blockbench",
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "curie-content:block/tungsten_block"
+	}
+}

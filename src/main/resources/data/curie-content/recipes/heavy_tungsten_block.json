@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "  ",
+    "TT",
+    "TT"
+  ],
+  "key": {
+    "T": {
+      "item": "curie-content:tungsten_block"
+    }
+  },
+  "result": {
+    "item": "curie-content:heavy_tungsten_block",
+    "count": 1
+  }
+}
+

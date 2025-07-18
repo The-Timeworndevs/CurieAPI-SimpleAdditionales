@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "tag": "curie-content:raw_tungsten"
+  },
+  "result": "curie-content:tungsten_ingot"
+}
+

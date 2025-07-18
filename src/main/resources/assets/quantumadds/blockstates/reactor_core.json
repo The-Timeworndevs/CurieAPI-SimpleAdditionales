@@ -1,8 +1,0 @@
-{
-  "variants": {
-    "facing=north": { "model": "quantumadds:block/reactor_core" },
-    "facing=east": { "model": "quantumadds:block/reactor_core", "y": 90 },
-    "facing=south": { "model": "quantumadds:block/reactor_core", "y": 180 },
-    "facing=west": { "model": "quantumadds:block/reactor_core", "y": 270 }
-  }
-}

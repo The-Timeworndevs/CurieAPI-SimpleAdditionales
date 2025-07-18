@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WR ",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "item": "minecraft:flint"
+    },
+    "R": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "curie-content:red_pill",
+    "count": 4
+  }
+}
+

@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "RVR",
+    "VHV"
+  ],
+  "key": {
+    "V": {
+      "item": "curie-content:pvc"
+    },
+    "H": {
+      "item": "minecraft:leather_helmet"
+    },
+    "R": {
+      "item": "curie-content:rubber"
+    }
+  },
+  "result": {
+    "item": "curie-content:hazmatd_helmet",
+    "count": 1
+  }
+}
+

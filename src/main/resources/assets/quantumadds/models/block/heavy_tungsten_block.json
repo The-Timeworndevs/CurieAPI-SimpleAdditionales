@@ -1,7 +1,0 @@
-{
-	"credit": "Made without Blockbench",
-	"parent": "block/cube_all",
-	"textures": {
-		"all": "quantumadds:block/tungsten_block"
-	}
-}

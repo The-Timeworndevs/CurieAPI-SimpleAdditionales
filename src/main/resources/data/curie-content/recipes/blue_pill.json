@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "WWW",
+    "WR ",
+    "WWW"
+  ],
+  "key": {
+    "W": {
+      "tag": "minecraft:flowers"
+    },
+    "R": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "result": {
+    "item": "curie-content:blue_pill",
+    "count": 4
+  }
+}
+

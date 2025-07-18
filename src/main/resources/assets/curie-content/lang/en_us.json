@@ -1,0 +1,49 @@
+{
+  "itemGroup.curie-content.radiation": "Radiation",
+  "itemGroup.curie-content.quantum": "Quantum",
+  "itemGroup.curie-content.building_blocks": "Building Blocks",
+  "item.curie-content.geiger_counter": "Geiger Counter",
+  "block.curie-content.meteorite_rock": "Meteorite Rock",
+  "block.curie-content.plutonium_core": "Plutonium Core",
+  "block.curie-content.heavy_tungsten_block": "Heavy Tungsten Block",
+  "block.curie-content.tungsten_block": "Tungsten Block",
+  "block.curie-content.tungsten_ore": "Tungsten Ore",
+  "block.curie-content.deepslate_tungsten_ore": "Deepslate Tungsten Ore",
+  "block.curie-content.wasteland_soil": "Wasteland Soil",
+
+  "item.curie-content.hazmatd_helmet": "Hazmat Helmet - D",
+  "item.curie-content.hazmatd_chestplate": "Hazmat Chestplate - D",
+  "item.curie-content.hazmatd_leggings": "Hazmat Leggings - D",
+  "item.curie-content.hazmatd_boots": "Hazmat Boots - D",
+
+  "item.curie-content.hazmatc_helmet": "Hazmat Helmet - C",
+  "item.curie-content.hazmatc_chestplate": "Hazmat Chestplate - C",
+  "item.curie-content.hazmatc_leggings": "Hazmat Leggings - C",
+  "item.curie-content.hazmatc_boots": "Hazmat Boots - C",
+
+  "item.curie-content.hazmatb_helmet": "Hazmat Helmet - B",
+  "item.curie-content.hazmatb_chestplate": "Hazmat Chestplate - B",
+  "item.curie-content.hazmatb_leggings": "Hazmat Leggings - B",
+  "item.curie-content.hazmatb_boots": "Hazmat Boots - B",
+
+  "item.curie-content.hazmata_helmet": "Hazmat Helmet - A",
+  "item.curie-content.hazmata_chestplate": "Hazmat Chestplate - A",
+  "item.curie-content.hazmata_leggings": "Hazmat Leggings - A",
+  "item.curie-content.hazmata_boots": "Hazmat Boots - A",
+
+  "effect.curie-content.skin_falloff": "Skin Fall Off",
+  "effect.curie-content.exposed_organs": "Exposed Organs",
+  "effect.curie-content.radiation_neutralisation": "Radiation Neutralisation",
+  "item.curie-content.red_pill": "Suspicious Pill",
+  "item.curie-content.blue_pill": "Medical Pill",
+  "item.curie-content.raw_tungsten": "Raw Tungsten",
+  "item.curie-content.tungsten_ingot": "Tungsten Ingot",
+  "item.curie-content.rubber": "Rubber",
+  "item.curie-content.pvc": "PVC",
+  "death.attack.wither": "%s was disintegrated on a nuclear level.",
+
+  "biome.curie-content.tomb_world": "Tomb World",
+
+  "figura.docs.curie.player.getRadiation": "Returns the player's current radiation levels\nThe returned table has a key for each defined radiation type, with the value being their current level\nThis method is only safe when called on the server"
+
+}

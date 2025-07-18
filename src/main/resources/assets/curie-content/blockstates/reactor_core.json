@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "curie-content:block/reactor_core" },
+    "facing=east": { "model": "curie-content:block/reactor_core", "y": 90 },
+    "facing=south": { "model": "curie-content:block/reactor_core", "y": 180 },
+    "facing=west": { "model": "curie-content:block/reactor_core", "y": 270 }
+  }
+}

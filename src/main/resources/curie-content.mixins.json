@@ -1,0 +1,14 @@
+{
+	"required": true,
+	"package": "net.timeworndevs.curiecontent.mixin",
+	"plugin": "net.timeworndevs.curiecontent.CurieContentMixinPlugin",
+	"compatibilityLevel": "JAVA_17",
+	"mixins": [],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"client": [
+		"LivingEntityRendererMixin",
+		"EntityAPIMixin"
+	]
+}
